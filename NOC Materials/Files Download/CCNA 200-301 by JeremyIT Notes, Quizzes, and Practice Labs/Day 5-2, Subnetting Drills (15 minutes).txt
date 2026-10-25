@@ -1,0 +1,18 @@
+Session complete
+50/50
+
+100% correct · best streak 50 · average 17 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type	Correct
+First usable host	5/5
+Broadcast address	5/5
+Wildcard mask		5/5
+Usable host count	5/5
+Mask to CIDR		5/5
+CIDR to mask		5/5
+Next subnet			5/5
+Network address		5/5
+Prefix for N hosts	5/5
+Last usable host	5/5
