@@ -1,0 +1,27 @@
+Session complete
+39/42
+
+93% correct · best streak 22 · average 20 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type	Correct
+Prefix for N hosts	3/4
+Next subnet			4/5
+Last usable host	4/5
+Mask to CIDR		4/4
+Network address		4/4
+Wildcard mask		4/4
+Usable host count	4/4
+Broadcast address	4/4
+CIDR to mask		4/4
+First usable host	4/4
+
+Questions to review
+
+What is the network address of the next subnet after the one containing 10.176.255.81/23
+You: 10.176.256.0 · Answer: 10.177.0.0
+What is the last usable host address in the subnet of 172.23.214.114/13
+You: 172.24.255.254 · Answer: 172.23.255.254
+What is the smallest prefix length that fits at least 2,994 hosts
+You: /16 · Answer: /20
