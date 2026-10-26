@@ -1,0 +1,40 @@
+Session complete
+13/18
+
+72% correct · best streak 4 · average 50 s per question.
+
+Aim for under 45 seconds per question at this difficulty. Work out the block size first, then adjust.
+
+Question type	Correct
+Mask for N hosts	0/4
+Nth subnet			1/2
+Previous subnet		2/2
+Network address		1/1
+Broadcast address	2/2
+Last usable host	1/1
+First usable host	1/1
+Subnet count		1/1
+Longest shared prefix	1/1
+Valid host check	2/2
+Wildcard mask		1/1
+Questions to review
+
+What is the smallest subnet mask (dotted decimal) that gives at least 1,517 usable hosts?
+You: /21 · Answer: 255.255.248.0
+2^11 − 2 = 2,046 covers 1,517, while 2^10 − 2 = 1,022 does not. So /21 = 255.255.248.0.
+
+What is the smallest subnet mask (dotted decimal) that gives at least 2,287 usable hosts?
+You: 255.255.192.0 · Answer: 255.255.240.0
+2^12 − 2 = 4,094 covers 2,287, while 2^11 − 2 = 2,046 does not. So /20 = 255.255.240.0.
+
+The block 172.164.0.0/15 is split into equal /19 subnets. What is the network address of subnet number 3? (Subnet 1 starts at the block address.)
+You: 172.168.0.0 · Answer: 172.164.64.0
+Each /19 subnet has 8,192 addresses. Subnet 3 starts at 172.164.0.0 + (3 − 1) × 8,192 = 172.164.64.0.
+
+What is the smallest subnet mask (dotted decimal) that gives at least 528 usable hosts?
+You: /22 · Answer: 255.255.252.0
+2^10 − 2 = 1,022 covers 528, while 2^9 − 2 = 510 does not. So /22 = 255.255.252.0.
+
+What is the smallest subnet mask (dotted decimal) that gives at least 1,432 usable hosts?
+You: /21 · Answer: 255.255.248.0
+2^11 − 2 = 2,046 covers 1,432, while 2^10 − 2 = 1,022 does not. So /21 = 255.255.248.0.
