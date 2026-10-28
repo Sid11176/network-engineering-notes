@@ -1,0 +1,25 @@
+Session complete
+15/16
+
+94% correct · best streak 10 · average 56 s per question.
+
+Aim for under 45 seconds per question at this difficulty. Work out the block size first, then adjust.
+
+Question type	Correct
+VLSM allocation	01
+Valid host check	22
+Nth subnet			22
+Mask for N hosts	11
+Longest shared prefix	22
+Last usable host	22
+Usable host count	11
+Same subnet check	22
+First usable host	11
+Wildcard mask		11
+Next subnet			11
+
+Questions to review
+
+Split 55.135.39.024 with VLSM into LANs that need 120, 20, 48, 6 usable hosts. Allocate largest first, one after another from the start of the block. What is the network address and prefix of the LAN that needs 6 hosts
+You (skipped) · Answer 55.135.39.22429
+Allocations, largest first 120 hosts → 55.135.39.025; 48 hosts → 55.135.39.12826; 20 hosts → 55.135.39.19227; 6 hosts → 55.135.39.22429. The 6-host LAN is 55.135.39.22429.
