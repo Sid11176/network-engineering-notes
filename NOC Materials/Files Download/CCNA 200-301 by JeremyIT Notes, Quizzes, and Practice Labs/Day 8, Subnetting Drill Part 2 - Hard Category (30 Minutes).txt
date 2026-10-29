@@ -1,0 +1,85 @@
+Session complete
+31/43
+
+72% correct · best streak 7 · average 42 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type	Correct
+Nth subnet			2/10
+Mask for N hosts	2/3
+Usable host count	3/4
+Route summarization	3/4
+Same subnet check	3/4
+Next subnet			1/1
+Wildcard mask		2/2
+Subnet count		2/2
+Broadcast address	2/2
+Network address		2/2
+Longest shared prefix	2/2
+Previous subnet		3/3
+VLSM allocation		1/1
+Last usable host	1/1
+Valid host check	1/1
+First usable host	1/1
+
+Questions to review
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 209.159.152.0/25 209.159.152.128/25 209.159.153.0/25 209.159.154.128/25
+You: 209.159.152.0/21 · Answer: 209.159.152.0/22
+The lowest address is 209.159.152.0 and the highest is 209.159.154.255. They share their first 22 bits, so the summary is 209.159.152.0/22.
+
+
+The block 172.181.192.0/18 is split into equal /23 subnets. What is the network address of subnet number 29? (Subnet 1 starts at the block address.)
+You: 172.181.248.0/23 · Answer: 172.181.248.0
+Each /23 subnet has 512 addresses. Subnet 29 starts at 172.181.192.0 + (29 − 1) × 512 = 172.181.248.0.
+
+
+The block 60.208.198.0/23 is split into equal /27 subnets. What is the network address of subnet number 2? (Subnet 1 starts at the block address.)
+You: 60.208.198.32/27 · Answer: 60.208.198.32
+Each /27 subnet has 32 addresses. Subnet 2 starts at 60.208.198.0 + (2 − 1) × 32 = 60.208.198.32.
+
+
+Using subnet mask 255.128.0.0 are 220.246.129.193 and 220.118.129.193 in the same subnet?
+You: yes · Answer: no
+Network of the first address: 220.128.0.0. Network of the second: 220.0.0.0. They differ, so no.
+
+
+How many usable host addresses are on a network with subnet mask 255.240.0.0
+You: 524288 · Answer: 1,048,574
+32 − 12 = 20 host bits. 2^20 − 2 = 1,048,574.
+
+
+The block 145.112.0.0/12 is split into equal /16 subnets. What is the network address of subnet number 3? (Subnet 1 starts at the block address.)
+You: 145.114.0.0/16 · Answer: 145.114.0.0
+Each /16 subnet has 65,536 addresses. Subnet 3 starts at 145.112.0.0 + (3 − 1) × 65,536 = 145.114.0.0.
+
+
+The block 86.206.0.0/15 is split into equal /19 subnets. What is the network address of subnet number 11? (Subnet 1 starts at the block address.)
+You: (skipped) · Answer: 86.207.64.0
+Each /19 subnet has 8,192 addresses. Subnet 11 starts at 86.206.0.0 + (11 − 1) × 8,192 = 86.207.64.0.
+
+
+The block 177.204.128.0/17 is split into equal /20 subnets. What is the network address of subnet number 5? (Subnet 1 starts at the block address.)
+You: (skipped) · Answer: 177.204.192.0
+Each /20 subnet has 4,096 addresses. Subnet 5 starts at 177.204.128.0 + (5 − 1) × 4,096 = 177.204.192.0.
+
+
+What is the smallest subnet mask (dotted decimal) that gives at least 632 usable hosts?
+You: 255.255.251.0 · Answer: 255.255.252.0
+2^10 − 2 = 1,022 covers 632, while 2^9 − 2 = 510 does not. So /22 = 255.255.252.0.
+
+
+The block 42.115.128.0/18 is split into equal /22 subnets. What is the network address of subnet number 10? (Subnet 1 starts at the block address.)
+You: (skipped) · Answer: 42.115.164.0
+Each /22 subnet has 1,024 addresses. Subnet 10 starts at 42.115.128.0 + (10 − 1) × 1,024 = 42.115.164.0.
+
+
+The block 204.187.24.0/22 is split into equal /26 subnets. What is the network address of subnet number 15? (Subnet 1 starts at the block address.)
+You: (skipped) · Answer: 204.187.27.128
+Each /26 subnet has 64 addresses. Subnet 15 starts at 204.187.24.0 + (15 − 1) × 64 = 204.187.27.128.
+
+
+The block 76.32.0.0/12 is split into equal /18 subnets. What is the network address of subnet number 34? (Subnet 1 starts at the block address.)
+You: (skipped) · Answer: 76.40.64.0
+Each /18 subnet has 16,384 addresses. Subnet 34 starts at 76.32.0.0 + (34 − 1) × 16,384 = 76.40.64.0.

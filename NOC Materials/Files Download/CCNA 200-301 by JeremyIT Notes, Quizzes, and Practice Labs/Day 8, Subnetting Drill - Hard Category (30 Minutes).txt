@@ -1,0 +1,78 @@
+Subnetting drill: hard
+No answer key while you drill. Explanations come at the end.
+
+Session complete
+29/39
+
+74% correct · best streak 8 · average 46 s per question.
+
+Aim for under 45 seconds per question at this difficulty. Work out the block size first, then adjust.
+
+Question type	Correct
+Route summarization	3/10
+Wildcard mask		2/3
+Previous subnet		2/3
+Usable host count	3/4
+Network address		3/3
+Mask for N hosts	1/1
+Subnet count		2/2
+Broadcast address	2/2
+Last usable host	1/1
+VLSM allocation		3/3
+First usable host	2/2
+Valid host check	1/1
+Next subnet			1/1
+Longest shared prefix	1/1
+Nth subnet			1/1
+Same subnet check	1/1
+
+Questions to review
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 71.245.62.192/26 71.245.63.0/26
+You: (skipped) · Answer: 71.245.62.0/23
+The lowest address is 71.245.62.192 and the highest is 71.245.63.63. They share their first 23 bits, so the summary is 71.245.62.0/23.
+
+
+What wildcard mask matches exactly the addresses in 24.72.144.0/22
+You: 0.0.108.255 · Answer: 0.0.3.255
+The wildcard is the inverse of the mask 255.255.252.0: every bit flipped, which gives 0.0.3.255.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 72.183.196.0/26 72.183.196.64/26 72.183.196.128/26 72.183.196.192/26
+You: (skipped) · Answer: 72.183.196.0/24
+
+
+The lowest address is 72.183.196.0 and the highest is 72.183.196.255. They share their first 24 bits, so the summary is 72.183.196.0/24.
+What is the broadcast address of the subnet immediately before the one containing 104.108.102.60/23
+You: 104.108.103.255 · Answer: 104.108.101.255
+This subnet starts at 104.108.102.0. The address just below it is the previous subnet’s broadcast: 104.108.101.255.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 221.174.0.0/20 221.174.48.0/20
+You: (skipped) · Answer: 221.174.0.0/18
+
+
+The lowest address is 221.174.0.0 and the highest is 221.174.63.255. They share their first 18 bits, so the summary is 221.174.0.0/18.
+What is the smallest single summary route (network/prefix) that covers all of these networks? 182.193.121.64/28 182.193.121.80/28 182.193.121.96/28 182.193.121.112/28
+You: (skipped) · Answer: 182.193.121.64/26
+The lowest address is 182.193.121.64 and the highest is 182.193.121.127. They share their first 26 bits, so the summary is 182.193.121.64/26.
+
+
+How many usable host addresses are on a network with subnet mask 255.255.255.192
+You: 60 · Answer: 62
+32 − 26 = 6 host bits. 2^6 − 2 = 62.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 122.202.140.0/24 122.202.141.0/24 122.202.142.0/24 122.202.143.0/24
+You: (skipped) · Answer: 122.202.140.0/22
+The lowest address is 122.202.140.0 and the highest is 122.202.143.255. They share their first 22 bits, so the summary is 122.202.140.0/22.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 93.112.64.0/23 93.112.66.0/23 93.112.70.0/23 93.112.74.0/23
+You: 93.112.64.0/21 · Answer: 93.112.64.0/20
+The lowest address is 93.112.64.0 and the highest is 93.112.75.255. They share their first 20 bits, so the summary is 93.112.64.0/20.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 105.214.58.64/26 105.214.58.192/26 105.214.59.0/26 105.214.59.192/26
+You: 105.214.20.0/20 · Answer: 105.214.58.0/23
+The lowest address is 105.214.58.64 and the highest is 105.214.59.255. They share their first 23 bits, so the summary is 105.214.58.0/23.

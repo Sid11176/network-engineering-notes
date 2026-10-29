@@ -1,0 +1,43 @@
+Subnetting drill: hard
+No answer key while you drill. Explanations come at the end.
+
+Session complete
+62/65
+
+95% correct · best streak 30 · average 28 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type	Correct
+Broadcast address	4/5
+Next subnet			7/8
+Mask for N hosts	8/9
+Nth subnet			6/6
+Wildcard mask		2/2
+Valid host check	3/3
+Last usable host	3/3
+Usable host count	5/5
+VLSM allocation		4/4
+Same subnet check	2/2
+Subnet count		3/3
+First usable host	4/4
+Network address		2/2
+Route summarization	3/3
+Previous subnet		4/4
+Longest shared prefix	2/2
+
+Questions to review
+
+What is the smallest subnet mask (dotted decimal) that gives at least 2,837 usable hosts?
+You: 255.255.239.0 · Answer: 255.255.240.0
+2^12 − 2 = 4,094 covers 2,837, while 2^11 − 2 = 2,046 does not. So /20 = 255.255.240.0.
+
+
+What is the network address of the subnet immediately after the one containing 36.116.190.6 with mask 255.254.0.0
+You: 36.118.0.1 · Answer: 36.118.0.0
+This subnet starts at 36.116.0.0 and spans 131,072 addresses. Add the block size: 36.118.0.0.
+
+
+What is the broadcast address of 220.206.12.88/14
+You: 220.207.12.255 · Answer: 220.207.255.255
+The network is 220.204.0.0 with 262,144 addresses. Set all 18 host bits to 1 and you get 220.207.255.255.
