@@ -1,0 +1,44 @@
+Subnetting drill: hard
+No answer key while you drill. Explanations come at the end.
+
+Session complete
+42/45
+
+93% correct · best streak 19 · average 19 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Wildcard mask		0/1
+Network address		3/4
+Longest shared prefix	6/7
+Mask for N hosts	2/2
+First usable host	3/3
+Valid host check	2/2
+Next subnet			6/6
+Same subnet check	2/2
+Nth subnet			2/2
+Last usable host	2/2
+Usable host count	3/3
+Broadcast address	5/5
+Previous subnet		1/1
+Route summarization	1/1
+Subnet count		3/3
+VLSM allocation		1/1
+
+
+Questions to review
+
+What is the network address of 57.156.214.237 with mask 255.255.255.252
+You: 57.156.214.237 · Answer: 57.156.214.236
+The mask 255.255.255.252 leaves 2 host bits. Set them all to 0 in 57.156.214.237 and you get 57.156.214.236.
+
+
+What is the longest prefix length that puts these two addresses in the same subnet? 170.89.117.155 170.89.117.152
+You: /29 · Answer: /30
+Compare the two addresses bit by bit. The first 30 bits match and bit 31 is the first difference, so /30 is the longest prefix that still contains both.
+
+
+What wildcard mask matches exactly the addresses in 217.89.10.24/29
+You: 0.0.0.247 · Answer: 0.0.0.7
+The wildcard is the inverse of the mask 255.255.255.248: every bit flipped, which gives 0.0.0.7.
