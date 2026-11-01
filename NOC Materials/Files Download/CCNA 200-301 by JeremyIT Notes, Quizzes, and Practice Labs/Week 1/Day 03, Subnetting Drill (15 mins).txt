@@ -1,0 +1,42 @@
+Session complete
+23/34
+
+68% correct · best streak 5 · average 22 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type	Correct
+Broadcast address	2/5
+Usable host count	2/4
+CIDR to mask	2/4
+Prefix for N hosts	3/5
+First usable host	2/3
+Next subnet	2/3
+Wildcard mask	3/3
+Network address	2/2
+Last usable host	2/2
+Mask to CIDR	3/3
+Questions to review
+
+What is the dotted-decimal subnet mask for /30?
+You: 255.255.255.251 · Answer: 255.255.255.252
+What is the broadcast address of 172.21.57.121/16
+You: 172.21.0.0 · Answer: 172.21.255.255
+What is the broadcast address of 192.168.11.87/23
+You: 192.168.10.255 · Answer: 192.168.11.255
+What is the smallest prefix length that fits at least 237 hosts
+You: /28 · Answer: /24
+What is the smallest prefix length that fits at least 237 hosts
+You: /28 · Answer: /24
+What is the network address of the next subnet after the one containing 192.168.12.225/23
+You: 192.168.12.0 · Answer: 192.168.14.0
+What is the dotted-decimal subnet mask for /24?
+You: 255.255.255.255 · Answer: 255.255.255.0
+How many usable hosts are in a /8 subnet?
+You: 64516 · Answer: 16,777,214
+What is the first usable host address in the subnet of 10.109.50.217/11
+You: 10.10.32.1 · Answer: 10.96.0.1
+How many usable hosts are in a /8 subnet?
+You: 16387064 · Answer: 16,777,214
+What is the broadcast address of 192.168.187.155/22
+You: 192.168.186.0 · Answer: 192.168.187.255
