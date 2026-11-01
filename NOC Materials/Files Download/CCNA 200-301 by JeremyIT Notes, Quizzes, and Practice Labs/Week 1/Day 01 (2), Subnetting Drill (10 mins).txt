@@ -1,0 +1,20 @@
+Questions to review
+
+What is the first usable host address in the subnet of 10.250.140.68/27
+You: 10.250.140.64 · Answer: 10.250.140.65
+What is the last usable host address in the subnet of 172.21.197.72/26
+You: 172.21.197.127 · Answer: 172.21.197.126
+What is the smallest prefix length that fits at least 31 hosts
+You: /27 · Answer: /26
+What is the wildcard mask for the subnet mask 255.255.255.128
+You: 0.0.0.128 · Answer: 0.0.0.127
+What is the first usable host address in the subnet of 10.250.140.68/27
+You: 10.250.140.95 · Answer: 10.250.140.65
+What is the last usable host address in the subnet of 172.21.197.72/26
+You: 172.21.197.127 · Answer: 172.21.197.126
+What is the wildcard mask for the subnet mask 255.255.255.128
+You: 0.0.0.126 · Answer: 0.0.0.127
+How many usable hosts are in a /21 subnet?
+You: 262 · Answer: 2,046
+What is the first usable host address in the subnet of 10.250.140.68/27
+You: 10.250.140.64 · Answer: 10.250.140.65
