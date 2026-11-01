@@ -1,0 +1,26 @@
+Target IP address 213 . 103 . 126 . 50 / 28
+Network		213.103.126.48
+First Host	213.103.126.49
+Last Host	213.103.126.62
+Broadcast	213.103.126.63
+Next Subnet	213.103.126.64
+
+
+
+Target IP address 204 . 177 . 92 . 144 / 25
+Network		204 . 177 . 92 . 128
+First Host	204 . 177 . 92 . 129
+Last Host	204 . 177 . 92 . 254
+Broadcast	204 . 177 . 92 . 255
+Next Subnet	204 . 177 . 93 . 0
+
+
+
+Target IP address 211 . 170 . 229 . 222 / 28
+Network		211 . 170 . 229 . 208
+First Host	211 . 170 . 229 . 209
+Last Host	211 . 170 . 229 . 222
+Broadcast	211 . 170 . 229 . 223
+Next Subnet	211 . 170 . 229 . 224
+
+
