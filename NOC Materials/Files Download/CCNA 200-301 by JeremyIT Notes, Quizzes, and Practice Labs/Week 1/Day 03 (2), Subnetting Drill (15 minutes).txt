@@ -1,0 +1,33 @@
+Session complete
+24/30
+
+80% correct · best streak 9 · average 28 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Last usable host	2/5
+CIDR to mask		3/5
+Broadcast address	2/3
+Next subnet		2/2
+First usable host	3/3
+Usable host count	2/2
+Network address		2/2
+Wildcard mask		3/3
+Mask to CIDR		3/3
+Prefix for N hosts	2/2
+
+Questions to review
+
+What is the broadcast address of 172.29.32.200/28
+You: 172.29.32.192 · Answer: 172.29.32.207
+What is the dotted-decimal subnet mask for /26?
+You: 255.255.255.190 · Answer: 255.255.255.192
+What is the last usable host address in the subnet of 10.151.71.162/20
+You: 10.151.79.255 · Answer: 10.151.79.254
+What is the dotted-decimal subnet mask for /8?
+You: 255.255.0.0 · Answer: 255.0.0.0
+What is the last usable host address in the subnet of 10.194.166.38/9
+You: 10.194.254.254 · Answer: 10.255.255.254
+What is the last usable host address in the subnet of 10.194.166.38/9
+You: 10.254.254.254 · Answer: 10.255.255.254
