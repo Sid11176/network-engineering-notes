@@ -1,0 +1,36 @@
+Session complete
+9/17
+
+53% correct · best streak 4 · average 25 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Last usable host	0/2
+First usable host	1/3
+CIDR to mask		1/2
+Usable host count	1/2
+Prefix for N hosts	1/2
+Wildcard mask		1/2
+Mask to CIDR		1/1
+Next subnet		1/1
+Network address		1/1
+Broadcast address	1/1
+Questions to review
+
+What is the dotted-decimal subnet mask for /24?
+You: 255.255.255.254 · Answer: 255.255.255.0
+What is the first usable host address in the subnet of 192.168.7.79/27
+You: 192.168.7.64 · Answer: 192.168.7.65
+What is the first usable host address in the subnet of 192.168.7.79/27
+You: 192.168.7.79.65 · Answer: 192.168.7.65
+How many usable hosts are in a /26 subnet?
+You: 158 · Answer: 62
+What is the smallest prefix length that fits at least 165 hosts
+You: /25 · Answer: /24
+What is the wildcard mask for the subnet mask 255.255.255.248
+You: 0.0.0.6 · Answer: 0.0.0.7
+What is the last usable host address in the subnet of 10.81.177.54/29
+You: 10.81.177.55 · Answer: 10.81.177.54
+What is the last usable host address in the subnet of 10.81.177.54/29
+You: 10.81.177.55 · Answer: 10.81.177.54
