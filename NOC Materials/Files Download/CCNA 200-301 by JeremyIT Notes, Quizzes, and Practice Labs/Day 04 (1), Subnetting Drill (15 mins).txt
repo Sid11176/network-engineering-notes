@@ -1,0 +1,31 @@
+Session complete
+32/37
+
+86% correct · best streak 16 · average 23 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Last usable host	3/4
+Prefix for N hosts	3/4
+Mask to CIDR		3/4
+Broadcast address	3/4
+Next subnet		4/5
+Wildcard mask		3/3
+CIDR to mask		3/3
+Network address		3/3
+Usable host count	4/4
+First usable host	3/3
+
+Questions to review
+
+What is the broadcast address of 10.111.106.186/30
+You: 10.111.106.188 · Answer: 10.111.106.187
+What is the last usable host address in the subnet of 172.23.68.76/17
+You: 172.23.127.255 · Answer: 172.23.127.254
+What is the smallest prefix length that fits at least 9,879 hosts
+You: /10 · Answer: /18
+What is the network address of the next subnet after the one containing 10.172.96.182/29
+You: 10.172.96.188 · Answer: 10.172.96.184
+What is the CIDR prefix length for the mask 255.254.0.0
+You: /9 · Answer: /15

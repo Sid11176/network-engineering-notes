@@ -1,0 +1,43 @@
+Subnetting drill: hard
+No answer key while you drill. Explanations come at the end.
+
+Session complete
+52/55
+
+95% correct · best streak 22 · average 16 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Longest shared prefix	5/7
+Broadcast address	5/6
+Wildcard mask		2/2
+Nth subnet			2/2
+Next subnet			2/2
+Same subnet check	2/2
+Network address		4/4
+Usable host count	2/2
+First usable host	6/6
+Last usable host	4/4
+Valid host check	1/1
+VLSM allocation		3/3
+Subnet count		5/5
+Mask for N hosts	4/4
+Previous subnet		4/4
+Route summarization	1/1
+
+Questions to review
+
+What is the broadcast address of 203.182.31.146 with mask 255.128.0.0
+You: 203.254.255.255 · Answer: 203.255.255.255
+The network is 203.128.0.0 with 8,388,608 addresses. Set all 23 host bits to 1 and you get 203.255.255.255.
+
+
+What is the longest prefix length that puts these two addresses in the same subnet? 128.104.113.86 128.104.113.84
+You: /29 · Answer: /30
+Compare the two addresses bit by bit. The first 30 bits match and bit 31 is the first difference, so /30 is the longest prefix that still contains both.
+
+
+What is the longest prefix length that puts these two addresses in the same subnet? 51.14.208.114 51.14.225.137
+You: /16 · Answer: /18
+Compare the two addresses bit by bit. The first 18 bits match and bit 19 is the first difference, so /18 is the longest prefix that still contains both.
