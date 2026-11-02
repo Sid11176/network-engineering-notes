@@ -233,7 +233,7 @@ clear mac address-table dynamic address mac-address
 
 **Q3. Which fields are present in `show mac address-table` output on a Cisco switch?**
 
-![image.png](Week_1_Pictures/Day4(1)_Quiz3.png)
+![image.png](../assets/week-01-ethernet-lan-switching-part2-and-arp-quiz3.png)
 
 - **Answer:** c) VLAN, MAC Address, Type, Ports
 - **Why:** Cisco switch MAC address table output includes VLAN, MAC, Type, and Ports. "Internet Address, Physical Address, Type" is ARP table output on a PC.

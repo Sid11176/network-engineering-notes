@@ -34,7 +34,7 @@ This lesson covers:
 
 ### State Transition Summary
 
-![image.png](Week_2_Pictures/Day12(1)image1.png)
+![image.png](../assets/week-02-stp-part2-1.png)
 
 ```
 Blocking → Listening (15s) → Learning (15s) → Forwarding
@@ -260,7 +260,7 @@ SW2(config)# spanning-tree vlan 10 root secondary
 
 ### Quiz Question 7
 
-![image.png](Week_2_Pictures/Day12(1)image2.png)
+![image.png](../assets/week-02-stp-part2-2.png)
 
 **Scenario**: Two VLANs are active in the network (10 and 20). By default, SW3 is the root bridge for both VLANs.
 
@@ -271,7 +271,7 @@ SW2(config)# spanning-tree vlan 10 root secondary
 
 **Answer**:
 
-![image.png](Week_2_Pictures/Day12(1)image3.png)
+![image.png](../assets/week-02-stp-part2-3.png)
 
 **SW1 Commands**:
 
