@@ -170,7 +170,7 @@ show vlan brief
 
 #### 🗺️ Quiz Image 1: Basic Network Diagram
 
-![image.png](../assets/week-02-vlans-part1-quiz1.png)
+![image.png](../assets/week-03-vlans-part1-quiz1.png)
 
 **Question:** How many broadcast domains are shown?
 
@@ -198,7 +198,7 @@ Counting distinct segments separated by routers:
 
 #### 🎨 Quiz Image 2: VLAN Segmentation
 
-![image.png](../assets/week-02-vlans-part1-quiz2.png)
+![image.png](../assets/week-03-vlans-part1-quiz2.png)
 
 **Question:** Looking at the color-coded sections, how many broadcast domains are shown?
 
@@ -222,7 +222,7 @@ Counting them:
 
 #### 📡 Quiz Image 3: Broadcast Propagation
 
-![image.png](../assets/week-02-vlans-part1-quiz3.png)
+![image.png](../assets/week-03-vlans-part1-quiz3.png)
 
 **Question:** If PC3 sends a broadcast message, how many devices will receive it?
 

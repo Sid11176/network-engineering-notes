@@ -66,11 +66,11 @@
 
 **Quiz 1 & 2: Root Bridge Election**
 
-![Day 11-2 STP Quiz 1](../assets/week-02-stp-part1-quiz1.png)
+![Day 11-2 STP Quiz 1](../assets/week-03-stp-part1-quiz1.png)
 
 Day 11-2 STP Quiz 1
 
-![Day 11-2 STP Quiz 2](../assets/week-02-stp-part1-quiz2.png)
+![Day 11-2 STP Quiz 2](../assets/week-03-stp-part1-quiz2.png)
 
 Day 11-2 STP Quiz 2
 
@@ -80,7 +80,7 @@ Day 11-2 STP Quiz 2
 
 **Quiz 3: Root Port Tiebreaker (Neighbor BID)**
 
-![Day 11-2 STP Quiz 3](../assets/week-02-stp-part1-quiz3.png)
+![Day 11-2 STP Quiz 3](../assets/week-03-stp-part1-quiz3.png)
 
 Day 11-2 STP Quiz 3
 
@@ -90,7 +90,7 @@ Day 11-2 STP Quiz 3
 
 **Quiz 4: Root Port Tiebreaker (Neighbor Port ID)**
 
-![Day 11-2 STP Quiz 4](../assets/week-02-stp-part1-quiz4.png)
+![Day 11-2 STP Quiz 4](../assets/week-03-stp-part1-quiz4.png)
 
 Day 11-2 STP Quiz 4
 
@@ -100,7 +100,7 @@ Day 11-2 STP Quiz 4
 
 **Quiz 5: Complex Topology**
 
-![Day 11-2 STP Quiz 5](../assets/week-02-stp-part1-quiz5.png)
+![Day 11-2 STP Quiz 5](../assets/week-03-stp-part1-quiz5.png)
 
 Day 11-2 STP Quiz 5
 
@@ -108,7 +108,7 @@ Day 11-2 STP Quiz 5
 
 **Quiz 6: Mixed Speeds**
 
-![Day 11-2 STP Quiz 6](../assets/week-02-stp-part1-quiz6.png)
+![Day 11-2 STP Quiz 6](../assets/week-03-stp-part1-quiz6.png)
 
 Day 11-2 STP Quiz 6
 
