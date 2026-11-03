@@ -1,0 +1,48 @@
+Subnetting drill: hard
+No answer key while you drill. Explanations come at the end.
+
+Session complete
+49/53
+
+92% correct · best streak 22 · average 17 s per question.
+
+That pace is a good target for exam-style subnetting.
+
+Question type		Correct
+Subnet count		2/4
+Longest shared prefix	5/6
+Route summarization	6/7
+Next subnet			4/4
+Previous subnet		4/4
+Same subnet check	3/3
+Network address		7/7
+VLSM allocation		2/2
+Wildcard mask		2/2
+Last usable host	2/2
+Broadcast address	5/5
+Nth subnet			2/2
+Usable host count	1/1
+Valid host check	2/2
+Mask for N hosts	1/1
+First usable host	1/1
+
+Questions to review
+
+What is the longest prefix length that puts these two addresses in the same subnet? 109.112.201.59 109.112.201.49
+You: /30 · Answer: /28
+Compare the two addresses bit by bit. The first 28 bits match and bit 29 is the first difference, so /28 is the longest prefix that still contains both.
+
+
+What is the smallest single summary route (network/prefix) that covers all of these networks? 5.135.128.0/20 5.135.144.0/20 5.135.160.0/20
+You: 5.135.128.0/17 · Answer: 5.135.128.0/18
+The lowest address is 5.135.128.0 and the highest is 5.135.175.255. They share their first 18 bits, so the summary is 5.135.128.0/18.
+
+
+How many /21 subnets can be carved from 178.160.0.0/13
+You: 128 · Answer: 256
+8 bits are borrowed (/21 − /13), so 2^8 = 256 subnets.
+
+
+How many /27 subnets can be carved from 133.123.20.0/23
+You: 32 · Answer: 16
+4 bits are borrowed (/27 − /23), so 2^4 = 16 subnets.
