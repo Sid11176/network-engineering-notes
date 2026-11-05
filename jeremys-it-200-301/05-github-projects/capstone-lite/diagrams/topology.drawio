@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="topo2" name="Corrected Topology (Cisco19)">
+    <mxGraphModel dx="1027" dy="1445" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" value="&lt;b&gt;VLAN + STP + Router-on-a-Stick + Static Routing (Topology)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="700" x="60" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="R2" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=11;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=8;" value="&lt;b&gt;R2 — 1941&lt;/b&gt;&lt;br&gt;Remote Router (Stage 2)&lt;br&gt;G0/0: 10.0.0.2/30&lt;br&gt;G0/1: 192.168.40.1/24" vertex="1">
+          <mxGeometry height="53" width="78" x="360" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="R1" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=11;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=8;" value="&lt;b&gt;R1 — 1941&lt;/b&gt;&lt;br&gt;Router-on-a-Stick&lt;br&gt;G0/0: no IP (trunk)&lt;br&gt;G0/1: 10.0.0.1/30" vertex="1">
+          <mxGeometry height="53" width="78" x="360" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="SW1" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=l2_switch;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=11;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=8;" value="&lt;b&gt;SW1 — 2960&lt;/b&gt;&lt;br&gt;STP ROOT BRIDGE&lt;br&gt;G0/1 → R1&lt;br&gt;G0/2 → SW2 G0/1&lt;br&gt;F0/23 → SW2 F0/23" vertex="1">
+          <mxGeometry height="53" width="78" x="360" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="SW2" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=l2_switch;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=11;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=8;" value="&lt;b&gt;SW2 — 2960&lt;/b&gt;&lt;br&gt;Secondary Root&lt;br&gt;G0/1 → SW1 G0/2&lt;br&gt;F0/23 → SW1 F0/23&lt;br&gt;G0/2 free" vertex="1">
+          <mxGeometry height="53" width="78" x="760" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="PC7" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC7 — Remote&lt;/b&gt;&lt;br&gt;192.168.40.10/24&lt;br&gt;GW 192.168.40.1" vertex="1">
+          <mxGeometry height="53" width="60" x="640" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PC1" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC1&lt;/b&gt; — &lt;font color=&quot;#3b82c4&quot;&gt;VLAN 10&lt;/font&gt;&lt;br&gt;192.168.10.10&lt;br&gt;GW 192.168.10.1" vertex="1">
+          <mxGeometry height="53" width="60" x="220" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="PC2" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC2&lt;/b&gt; — &lt;font color=&quot;#4d8f2a&quot;&gt;VLAN 20&lt;/font&gt;&lt;br&gt;192.168.20.10&lt;br&gt;GW 192.168.20.1" vertex="1">
+          <mxGeometry height="53" width="60" x="370" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="PC3" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC3&lt;/b&gt; — &lt;font color=&quot;#d79b00&quot;&gt;VLAN 30&lt;/font&gt;&lt;br&gt;192.168.30.10&lt;br&gt;GW 192.168.30.1" vertex="1">
+          <mxGeometry height="53" width="60" x="520" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="PC4" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC4&lt;/b&gt; — &lt;font color=&quot;#3b82c4&quot;&gt;VLAN 10&lt;/font&gt;&lt;br&gt;192.168.10.11&lt;br&gt;GW 192.168.10.1" vertex="1">
+          <mxGeometry height="53" width="60" x="700" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="PC5" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC5&lt;/b&gt; — &lt;font color=&quot;#4d8f2a&quot;&gt;VLAN 20&lt;/font&gt;&lt;br&gt;192.168.20.11&lt;br&gt;GW 192.168.20.1" vertex="1">
+          <mxGeometry height="53" width="60" x="850" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="PC6" parent="1" style="shape=mxgraph.cisco19.rect;prIcon=workstation;fillColor=#FAFAFA;strokeColor=#005073;html=1;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;" value="&lt;b&gt;PC6&lt;/b&gt; — &lt;font color=&quot;#d79b00&quot;&gt;VLAN 30&lt;/font&gt;&lt;br&gt;192.168.30.11&lt;br&gt;GW 192.168.30.1" vertex="1">
+          <mxGeometry height="53" width="60" x="1000" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="e_r2_pc7" edge="1" parent="1" source="R2" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC7" value="R2 G0/1 ↔ PC7 NIC&lt;br&gt;192.168.40.0/24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_r1_r2" edge="1" parent="1" source="R1" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#9673a6;labelBackgroundColor=#ffffff;fontSize=10;" target="R2" value="R1 G0/1 ↔ R2 G0/0&lt;br&gt;10.0.0.0/30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_r1_sw1" edge="1" parent="1" source="R1" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;fontSize=10;" target="SW1" value="R1 G0/0 ↔ SW1 G0/1&lt;br&gt;802.1Q Trunk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trunkA" edge="1" parent="1" source="SW1" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#00a000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=10;fontColor=#007000;" target="SW2" value="&lt;b&gt;Trunk A (Gig, cost 4)&lt;/b&gt;&lt;br&gt;SW1 G0/2 ↔ SW2 G0/1&lt;br&gt;FORWARDING">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trunkB" edge="1" parent="1" source="SW1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=1;strokeWidth=3;strokeColor=#cc0000;dashed=1;exitX=0.85;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=10;fontColor=#cc0000;" target="SW2" value="&lt;b&gt;Trunk B (Fast, cost 19)&lt;/b&gt;&lt;br&gt;SW1 F0/23 ↔ SW2 F0/23&lt;br&gt;STP BLOCKED (Altn)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="426" y="370" />
+              <mxPoint x="772" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="SW1" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC1" value="F0/1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="SW1" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC2" value="F0/2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="SW1" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC3" value="F0/3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="SW2" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC4" value="F0/1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="SW2" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC5" value="F0/2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="SW2" style="endArrow=none;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=10;" target="PC6" value="F0/3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note_r1" parent="1" style="shape=note;whiteSpace=wrap;html=1;align=left;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;R1 subinterfaces (G0/0)&lt;/b&gt;&lt;br&gt;.10 → 192.168.10.1/24 (VLAN 10 ADMIN)&lt;br&gt;.20 → 192.168.20.1/24 (VLAN 20 USERS)&lt;br&gt;.30 → 192.168.30.1/24 (VLAN 30 IT)" vertex="1">
+          <mxGeometry height="85" width="210" x="640" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="note_routes" parent="1" style="shape=note;whiteSpace=wrap;html=1;align=left;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Static routes&lt;/b&gt;&lt;br&gt;R1: 192.168.40.0/24 via 10.0.0.2&lt;br&gt;R2: 192.168.10.0/24, 20.0/24, 30.0/24 via 10.0.0.1" vertex="1">
+          <mxGeometry height="80" width="220" x="900" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=10;spacingLeft=8;" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#3b82c4&quot;&gt;■&lt;/font&gt; VLAN 10 ADMIN&lt;br&gt;&lt;font color=&quot;#4d8f2a&quot;&gt;■&lt;/font&gt; VLAN 20 USERS&lt;br&gt;&lt;font color=&quot;#d79b00&quot;&gt;■&lt;/font&gt; VLAN 30 IT&lt;br&gt;&lt;font color=&quot;#00a000&quot;&gt;━━&lt;/font&gt; Forwarding trunk&lt;br&gt;&lt;font color=&quot;#cc0000&quot;&gt;╍╍&lt;/font&gt; STP-blocked trunk" vertex="1">
+          <mxGeometry height="115" width="170" x="900" y="215" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
