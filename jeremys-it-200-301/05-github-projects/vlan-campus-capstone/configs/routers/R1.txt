@@ -9,7 +9,19 @@ hostname R1
 !
 !
 !
+ip dhcp excluded-address 192.168.10.1 192.168.10.50
+ip dhcp excluded-address 192.168.20.1 192.168.20.50
+ip dhcp excluded-address 192.168.30.1 192.168.30.50
 !
+ip dhcp pool VLAN10-ADMIN
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ip dhcp pool VLAN20-USERS
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ip dhcp pool VLAN30-IT
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
 !
 !
 !
@@ -48,14 +60,17 @@ interface GigabitEthernet0/0
 interface GigabitEthernet0/0.10
  encapsulation dot1Q 10
  ip address 192.168.10.1 255.255.255.0
+ ip nat inside
 !
 interface GigabitEthernet0/0.20
  encapsulation dot1Q 20
  ip address 192.168.20.1 255.255.255.0
+ ip nat inside
 !
 interface GigabitEthernet0/0.30
  encapsulation dot1Q 30
  ip address 192.168.30.1 255.255.255.0
+ ip nat inside
 !
 interface GigabitEthernet0/1
  ip address 10.0.0.1 255.255.255.252
@@ -63,21 +78,27 @@ interface GigabitEthernet0/1
  speed auto
 !
 interface GigabitEthernet0/2
- no ip address
+ ip address 203.0.113.1 255.255.255.252
+ ip nat outside
  duplex auto
  speed auto
- shutdown
 !
 interface Vlan1
  no ip address
  shutdown
 !
+ip nat inside source list 1 interface GigabitEthernet0/2 overload
 ip classless
 ip route 192.168.40.0 255.255.255.0 10.0.0.2 
+ip route 0.0.0.0 0.0.0.0 203.0.113.2 
 !
 ip flow-export version 9
 !
 !
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.20.0 0.0.0.255
+access-list 1 permit 192.168.30.0 0.0.0.255
+access-list 1 remark HQ client subnets to be PAT-translated
 !
 !
 !
