@@ -35,13 +35,13 @@ Address:   198.51.100.10
 2. **Internal web page by hostname.** Screenshot `http://intranet.local` from PC-ADMIN and from PC-BRANCH.
    Expected: the page loads from both. The branch result also confirms the R2 route to VLAN 50.
 
-PC-ADMIN evidence: ../evidence/screenshots/v2-s5-intranet-local-pc-admin.png
-PC-BRANCH evidence: ../evidence/screenshots/v2-s5-intranet-local-pc-branch.png
+PC-ADMIN evidence: ![PC-ADMIN opens http://intranet.local](../evidence/screenshots/v2-s5-intranet-local-pc-admin.png)
+PC-BRANCH evidence: ![BRANCH-PC opens http://intranet.local](../evidence/screenshots/v2-s5-intranet-local-pc-branch.png)
 
 3. **Public web page by hostname.** Screenshot `http://publicwebsite.com` from PC-ADMIN.
    Expected: the page loads.
 
-evidence: ../evidence/screenshots/v2-s5-public-website-pc-admin.png
+evidence: ![PC-ADMIN opens http://publicwebsite.com](../evidence/screenshots/v2-s5-public-website-pc-admin.png)
 
 ## Result
 
