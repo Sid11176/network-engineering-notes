@@ -107,3 +107,87 @@ DNS servers show `0.0.0.0` on the clients. This is expected because no `dns-serv
   - The client broadcasts a request, and R1 receives it on the ROAS subinterface for that VLAN. R1 answers from the pool that matches that subnet, which is how each VLAN gets an address in its own range.
   - The `.1`–`.50` block is excluded, so leases start at `.51`. Gateways and fixed addresses stay outside the lease range and cannot collide with a client.
   - The DNS server shows `0.0.0.0` because no `dns-server` option exists yet. It is added in Session 5.
+
+
+
+# DHCP Verification (Session 5)
+
+Network: `v2-standout.pkt`. DHCP servers: R1 (HQ VLANs 10, 20, 30) and R2 (branch). Change this session: `dns-server 192.168.50.10` added to all four pools, and the HQ PCs now connect through SW2.
+
+## Result summary
+
+| Client | IPv4 address | Default gateway | DNS server |
+| --- | --- | --- | --- |
+| PC-ADMIN | 192.168.10.51 | 192.168.10.1 | 192.168.50.10 |
+| PC-USERS | 192.168.20.51 | 192.168.20.1 | 192.168.50.10 |
+| PC-IT | 192.168.30.51 | 192.168.30.1 | 192.168.50.10 |
+| PC-BRANCH | 192.168.40.51 | 192.168.40.1 | 192.168.50.10 |
+
+All four clients got the first address after the excluded block, their own gateway, and the new DNS server. In Session 3 the DNS server showed `0.0.0.0`.
+
+## Pool configuration
+
+### R1: `show running-config | section dhcp`
+
+```
+ip dhcp excluded-address 192.168.10.1 192.168.10.50
+ip dhcp excluded-address 192.168.20.1 192.168.20.50
+ip dhcp excluded-address 192.168.30.1 192.168.30.50
+ip dhcp pool VLAN10-ADMIN
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 192.168.50.10
+ip dhcp pool VLAN20-USERS
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 192.168.50.10
+ip dhcp pool VLAN30-IT
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 192.168.50.10
+```
+
+### R2: `show running-config | section dhcp`
+
+```
+ip dhcp excluded-address 192.168.40.1 192.168.40.50
+ip dhcp pool BRANCH-LAN
+ network 192.168.40.0 255.255.255.0
+ default-router 192.168.40.1
+ dns-server 192.168.50.10
+```
+
+## Client leases
+
+Key lines from `ipconfig /all` (FastEthernet0 only):
+
+```
+PC-ADMIN   IPv4 192.168.10.51  Mask 255.255.255.0  Gateway 192.168.10.1  DHCP 192.168.10.1  DNS 192.168.50.10
+PC-USERS   IPv4 192.168.20.51  Mask 255.255.255.0  Gateway 192.168.20.1  DHCP 192.168.20.1  DNS 192.168.50.10
+PC-IT      IPv4 192.168.30.51  Mask 255.255.255.0  Gateway 192.168.30.1  DHCP 192.168.30.1  DNS 192.168.50.10
+PC-BRANCH  IPv4 192.168.40.51  Mask 255.255.255.0  Gateway 192.168.40.1  DHCP 192.168.40.1  DNS 192.168.50.10
+```
+
+### R1: `show ip dhcp binding`
+
+```
+192.168.10.51    0001.42C4.85AA    Automatic
+192.168.20.51    0000.0C76.2C94    Automatic
+192.168.30.51    0009.7C61.A3E1    Automatic
+```
+
+### R2: `show ip dhcp binding`
+
+```
+192.168.40.51    0060.5C23.7B88    Automatic
+```
+
+Each binding's MAC address matches the client above it.
+
+## Conclusion
+
+- Configured: the DNS option on all four pools.
+- Verified: all four clients received valid leases with the DNS server, including the HQ PCs after the move to SW2.
+- Explained:
+  - Clients need a DNS server to resolve names such as `intranet.local`, and DHCP delivers it automatically instead of by hand on each PC.
+  - VLAN 50 has no pool because the servers use static addresses (.10 and .11) inside the excluded block.

@@ -13,6 +13,7 @@ hostname SW1
 !
 spanning-tree mode pvst
 spanning-tree extend system-id
+spanning-tree vlan 10,20,30,50 priority 24576
 !
 interface FastEthernet0/1
  switchport access vlan 10
@@ -65,11 +66,15 @@ interface FastEthernet0/21
 interface FastEthernet0/22
 !
 interface FastEthernet0/23
+ switchport trunk allowed vlan 10,20,30,50
+ switchport mode trunk
 !
 interface FastEthernet0/24
+ switchport trunk allowed vlan 10,20,30,50
+ switchport mode trunk
 !
 interface GigabitEthernet0/1
- switchport trunk allowed vlan 10,20,30
+ switchport trunk allowed vlan 10,20,30,50
  switchport mode trunk
 !
 interface GigabitEthernet0/2

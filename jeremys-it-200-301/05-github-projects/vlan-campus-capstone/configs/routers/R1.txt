@@ -16,12 +16,15 @@ ip dhcp excluded-address 192.168.30.1 192.168.30.50
 ip dhcp pool VLAN10-ADMIN
  network 192.168.10.0 255.255.255.0
  default-router 192.168.10.1
+ dns-server 192.168.50.10
 ip dhcp pool VLAN20-USERS
  network 192.168.20.0 255.255.255.0
  default-router 192.168.20.1
+ dns-server 192.168.50.10
 ip dhcp pool VLAN30-IT
  network 192.168.30.0 255.255.255.0
  default-router 192.168.30.1
+ dns-server 192.168.50.10
 !
 !
 !
@@ -72,6 +75,11 @@ interface GigabitEthernet0/0.30
  ip address 192.168.30.1 255.255.255.0
  ip nat inside
 !
+interface GigabitEthernet0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.50.1 255.255.255.0
+ ip nat inside
+!
 interface GigabitEthernet0/1
  ip address 10.0.0.1 255.255.255.252
  duplex auto
@@ -100,6 +108,7 @@ access-list 1 permit 192.168.10.0 0.0.0.255
 access-list 1 permit 192.168.20.0 0.0.0.255
 access-list 1 permit 192.168.30.0 0.0.0.255
 access-list 1 remark HQ client subnets to be PAT-translated
+access-list 1 permit 192.168.50.0 0.0.0.255
 !
 !
 !

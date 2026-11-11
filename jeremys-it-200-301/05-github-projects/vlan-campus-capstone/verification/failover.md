@@ -305,3 +305,195 @@ to a reachable address.
 - [x] R1 uses the direct R3 route while it is available
 - [x] With R1–R3 down, the floating default via R2 is active and HQ reaches `8.8.8.8`
 - [x] With the link restored, the preferred route returns
+
+
+
+
+
+
+
+
+
+# Failover Verification (Session 5)
+
+Two separate tests: one for Layer 2 (STP), one for Layer 3 (floating default route). Restore the network between them.
+
+## Test A: STP link failure (HQ triangle)
+
+Test: continuous ping from PC-ADMIN to the Web Server (`ping -t 192.168.50.11`), then shut the active link (SW2 Fa0/23).
+
+Evidence (capture these):
+
+```
+(SW2 `show spanning-tree vlan 10` before: root port Fa0/23)
+SW2#show spanning-tree vlan 10
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     000B.BE2D.CCD7
+             Cost        19
+             Port        23(FastEthernet0/23)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    28682  (priority 28672 sys-id-ext 10)
+             Address     00D0.FF31.46AA
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/23           Root FWD 19        128.23   P2p
+Fa0/24           Desg FWD 19        128.24   P2p
+
+
+
+(SW2 `show spanning-tree vlan 10` after the shutdown: root port Fa0/24)
+SW2#show spanning-tree vlan 10
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     000B.BE2D.CCD7
+             Cost        38
+             Port        24(FastEthernet0/24)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    28682  (priority 28672 sys-id-ext 10)
+             Address     00D0.FF31.46AA
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/24           Root FWD 19        128.24   P2p
+
+
+
+(ping output showing the gap and the recovery)
+C:\>ping -t 192.168.50.11
+
+Pinging 192.168.50.11 with 32 bytes of data:
+
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time=2ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time=1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+Reply from 192.168.50.11: bytes=32 time<1ms TTL=127
+```
+
+After `no shutdown`, SW2's root port should return to Fa0/23.
+SW2(config-if)#no shutdown
+SW2(config-if)#do show spanning-tree vlan 10
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     000B.BE2D.CCD7
+             Cost        19
+             Port        23(FastEthernet0/23)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    28682  (priority 28672 sys-id-ext 10)
+             Address     00D0.FF31.46AA
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/23           Root FWD 19        128.23   P2p
+Fa0/24           Desg FWD 19        128.24   P2p
+Result: ping recovered around 10 seconds.
+
+## Test B: WAN failover (R1 to R3)
+
+Test: shut R1 Gi0/2, check the route and the path, then restore.
+
+Evidence (capture these):
+
+```
+(R1 `show ip route 0.0.0.0` before: via 203.0.113.2)
+R1#show ip route 0.0.0.0
+Routing entry for 0.0.0.0/0, supernet
+Known via "static", distance 1, metric 0, candidate default path
+  Routing Descriptor Blocks:
+  * 203.0.113.2
+      Route metric is 0, traffic share count is 1
+
+
+(PC-ADMIN `tracert 8.8.8.8` before: 192.168.10.1, 203.0.113.2)
+C:\>tracert 8.8.8.8
+
+Tracing route to 8.8.8.8 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      192.168.10.1
+  2   *         0 ms      0 ms      8.8.8.8
+
+Trace complete.
+
+(R1 `show ip route 0.0.0.0` after the shutdown: via 10.0.0.2, AD 10)
+R1#show ip route 0.0.0.0
+Routing entry for 0.0.0.0/0, supernet
+Known via "static", distance 10, metric 0, candidate default path
+  Routing Descriptor Blocks:
+  * 10.0.0.2
+      Route metric is 0, traffic share count is 1
+
+
+(PC-ADMIN `tracert 8.8.8.8` after: 192.168.10.1, 10.0.0.2, 203.0.113.6)
+C:\>tracert 8.8.8.8
+
+Tracing route to 8.8.8.8 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      192.168.10.1
+  2   0 ms      0 ms      0 ms      10.0.0.2
+  3   1 ms      0 ms      0 ms      8.8.8.8
+
+Trace complete.
+
+
+(R2 `show ip nat translations`: HQ traffic translated to 203.0.113.5)
+R2#show ip nat translations 
+Pro  Inside global     Inside local       Outside local      Outside global
+icmp 203.0.113.5:170   192.168.10.51:170  8.8.8.8:170        8.8.8.8:170
+icmp 203.0.113.5:171   192.168.10.51:171  8.8.8.8:171        8.8.8.8:171
+icmp 203.0.113.5:172   192.168.10.51:172  8.8.8.8:172        8.8.8.8:172
+
+
+(R1 `show ip route 0.0.0.0` after `no shutdown`: via 203.0.113.2 again)
+```R1#show ip route 0.0.0.0
+Routing entry for 0.0.0.0/0, supernet
+Known via "static", distance 1, metric 0, candidate default path
+  Routing Descriptor Blocks:
+  * 203.0.113.2
+      Route metric is 0, traffic share count is 1
+
+Result: default route moved to R2 and returned after restore.
+
+## Conclusion
+
+- Verified: both failures recover on their own, and both were tested as separate events.
+- Explained:
+  - STP and the floating route solve different problems. STP restores a Layer 2 path inside HQ; the floating route restores the default route when the primary WAN link goes down.
+  - Without IP SLA or tracking, the floating route detects only a failed R1 Gi0/2 link. It does not detect an ISP failure beyond R3 while the link stays up.
