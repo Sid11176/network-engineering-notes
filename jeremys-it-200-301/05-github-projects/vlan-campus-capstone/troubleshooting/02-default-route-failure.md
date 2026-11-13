@@ -1,6 +1,6 @@
 # Troubleshooting Case 2: R1 default route removed
 
-Network: `v2-standout.pkt` (restored clean copy, saved as `v2-case2.pkt`). One change per fault. Session 6.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 This case has two stages because R1 has a floating backup default route via R2 (AD 10). Removing only the primary default does not break the Internet path, so Stage 1 shows a silent failover and Stage 2 removes the backup as well to produce the hard failure.
 

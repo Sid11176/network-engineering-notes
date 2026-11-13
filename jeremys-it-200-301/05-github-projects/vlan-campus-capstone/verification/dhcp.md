@@ -1,4 +1,4 @@
-# DHCP Verification (Session 3)
+# DHCP Verification: v1-core
 
 Network: `v1-core.pkt`. DHCP server: R1. Pools: `VLAN10-ADMIN`, `VLAN20-USERS`, `VLAN30-IT` (`.1`–`.50` excluded).
 
@@ -96,7 +96,7 @@ IP address       Client-ID/              Lease expiration        Type
 
 R1 shows one automatic binding per HQ PC, and the MAC addresses match the clients above.
 
-DNS servers show `0.0.0.0` on the clients. This is expected because no `dns-server` option is configured until Session 5.
+DNS servers show `0.0.0.0` on the clients. This is expected because no `dns-server` option is configured until v2-standout.
 
 ## Conclusion
 
@@ -106,13 +106,13 @@ DNS servers show `0.0.0.0` on the clients. This is expected because no `dns-serv
   - DHCP gives a client its network settings automatically instead of by hand: an IP address, a subnet mask, a default gateway, and a DNS server when one is configured.
   - The client broadcasts a request, and R1 receives it on the ROAS subinterface for that VLAN. R1 answers from the pool that matches that subnet, which is how each VLAN gets an address in its own range.
   - The `.1`–`.50` block is excluded, so leases start at `.51`. Gateways and fixed addresses stay outside the lease range and cannot collide with a client.
-  - The DNS server shows `0.0.0.0` because no `dns-server` option exists yet. It is added in Session 5.
+  - The DNS server shows `0.0.0.0` because no `dns-server` option exists yet. It is added in v2-standout.
 
 
 
-# DHCP Verification (Session 5)
+# DHCP Verification: v2-standout
 
-Network: `v2-standout.pkt`. DHCP servers: R1 (HQ VLANs 10, 20, 30) and R2 (branch). Change this session: `dns-server 192.168.50.10` added to all four pools, and the HQ PCs now connect through SW2.
+Network: `v2-standout.pkt`. DHCP servers: R1 (HQ VLANs 10, 20, 30) and R2 (branch). Change from v1-core: `dns-server 192.168.50.10` added to all four pools, and the HQ PCs now connect through SW2.
 
 ## Result summary
 
@@ -123,7 +123,7 @@ Network: `v2-standout.pkt`. DHCP servers: R1 (HQ VLANs 10, 20, 30) and R2 (branc
 | PC-IT | 192.168.30.51 | 192.168.30.1 | 192.168.50.10 |
 | PC-BRANCH | 192.168.40.51 | 192.168.40.1 | 192.168.50.10 |
 
-All four clients got the first address after the excluded block, their own gateway, and the new DNS server. In Session 3 the DNS server showed `0.0.0.0`.
+All four clients got the first address after the excluded block, their own gateway, and the new DNS server. In v1-core the DNS server showed `0.0.0.0`.
 
 ## Pool configuration
 

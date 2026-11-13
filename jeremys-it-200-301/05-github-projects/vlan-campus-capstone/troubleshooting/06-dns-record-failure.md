@@ -1,6 +1,6 @@
 # Troubleshooting Case 6: DNS record for intranet.local missing
 
-Network: `v2-standout.pkt` (restored clean copy). One change per fault. Session 7.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 ## Status
 

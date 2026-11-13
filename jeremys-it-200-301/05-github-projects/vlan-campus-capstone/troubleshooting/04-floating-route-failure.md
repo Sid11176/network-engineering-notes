@@ -1,6 +1,6 @@
 # Troubleshooting Case 4: R1 floating default route missing
 
-Network: `v2-standout.pkt` (restored clean copy). One change per fault. Session 7.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 ## Status
 

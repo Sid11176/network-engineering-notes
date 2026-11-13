@@ -1,4 +1,4 @@
-# NAT/PAT Verification (Session 3)
+# NAT/PAT Verification: v1-core
 
 Network: `v1-core.pkt`. NAT device: R1. Inside: Gi0/0.10, Gi0/0.20, Gi0/0.30. Outside: Gi0/2 (203.0.113.1/30). Match list: ACL 1.
 
@@ -88,9 +88,9 @@ R3 has only connected routes (`8.8.8.8/32`, `203.0.113.0/30`) and no gateway of 
 
 
 
-# NAT/PAT Verification (Session 5)
+# NAT/PAT Verification: v2-standout
 
-Network: `v2-standout.pkt`. Change this session: VLAN 50 added to the R1 and R2 NAT match ACLs, and `Gi0/0.50` added as an R1 inside interface.
+Network: `v2-standout.pkt`. Change from v1-core: VLAN 50 added to the R1 and R2 NAT match ACLs, and `Gi0/0.50` added as an R1 inside interface.
 
 ## Configuration
 

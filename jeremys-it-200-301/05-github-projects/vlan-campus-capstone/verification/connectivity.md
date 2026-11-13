@@ -1,4 +1,4 @@
-# Connectivity Verification (Session 3)
+# Connectivity Verification: v1-core
 
 Network: `v1-core.pkt`. Gate item: HQ clients reach the simulated `8.8.8.8` destination, and R1's route table matches the design.
 
@@ -9,7 +9,7 @@ Network: `v1-core.pkt`. Gate item: HQ clients reach the simulated `8.8.8.8` dest
 | PC-ADMIN, PC-USERS, PC-IT ping 8.8.8.8 | Captured: 4/4 replies, 0% loss on each | Section 1 |
 | R1 route table | Captured | Section 2 |
 | Each HQ PC pings its own VLAN gateway | Captured: 4/4 replies, 0% loss on each | Section 3 |
-| HQ PCs ping PC-BRANCH (Session 2 still passes) | Captured: 3 runs, each 4/4 replies, 0% loss | Section 4 |
+| HQ PCs ping PC-BRANCH (v0-foundation branch routing still passes) | Captured: 3 runs, each 4/4 replies, 0% loss | Section 4 |
 
 ## 1. Ping to the simulated ISP loopback
 
@@ -106,7 +106,7 @@ S*   0.0.0.0/0 [1/0] via 203.0.113.2
 ```
 
 - `S*  0.0.0.0/0 via 203.0.113.2` is the primary default route toward R3.
-- `S  192.168.40.0/24 via 10.0.0.2` is the Session 2 route to the branch, still present.
+- `S  192.168.40.0/24 via 10.0.0.2` is the branch route from v0-foundation, still present.
 - `C`/`L` entries exist for Gi0/0.10, Gi0/0.20, Gi0/0.30, the R1–R2 transit link (Gi0/1), and the ISP link (Gi0/2).
 
 ## 3. Each HQ PC to its own VLAN gateway
@@ -167,7 +167,7 @@ Approximate round trip times in milli-seconds:
 
 All three clients reach their own gateway with 4/4 replies. The reply TTL of 255 shows the reply came directly from R1's subinterface with no router in between, so DHCP-assigned addressing, the access ports, the trunk, and the ROAS subinterfaces all work.
 
-## 4. HQ PCs to PC-BRANCH (Session 2 regression)
+## 4. HQ PCs to PC-BRANCH (v0-foundation regression)
 
 Three runs of `ping 192.168.40.10` from the HQ PCs.
 
@@ -215,7 +215,7 @@ Approximate round trip times in milli-seconds:
     Minimum = 0ms, Maximum = 0ms, Average = 0ms
 ```
 
-All three runs get 4/4 replies. The reply TTL of 126 is consistent with the reply crossing two routers (R2, then R1), so the Session 2 path over the R1–R2 link still works after adding DHCP, the default route, and NAT. The `10 ms` reply in run 2 is a first-packet delay and not a loss.
+All three runs get 4/4 replies. The reply TTL of 126 is consistent with the reply crossing two routers (R2, then R1), so the v0-foundation path over the R1–R2 link still works after adding DHCP, the default route, and NAT. The `10 ms` reply in run 2 is a first-packet delay and not a loss.
 
 ## Conclusion
 
@@ -237,9 +237,9 @@ All three runs get 4/4 replies. The reply TTL of 126 is consistent with the repl
 
 
 
-# Routing and Connectivity Verification (Session 5)
+# Routing and Connectivity Verification: v2-standout
 
-Network: `v2-standout.pkt`. Change this session: VLAN 50 (192.168.50.0/24, gateway R1 `Gi0/0.50`) and a route to it on R2 via 10.0.0.1.
+Network: `v2-standout.pkt`. Change from v1-core: VLAN 50 (192.168.50.0/24, gateway R1 `Gi0/0.50`) and a route to it on R2 via 10.0.0.1.
 
 ## Evidence
 

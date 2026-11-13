@@ -1,6 +1,6 @@
 # Troubleshooting Case 1: VLAN 50 missing from the R1–SW1 trunk
 
-Network: `v2-standout.pkt` (restored clean copy, saved as `v2-case1.pkt`). One change per fault. Session 6.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 ## Status
 

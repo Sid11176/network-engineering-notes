@@ -1,6 +1,6 @@
 # Troubleshooting Case 3: R1 ROAS interface shut down
 
-Network: `v2-standout.pkt` (restored clean copy, saved as `v2-case3.pkt`). One change per fault. Session 6.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 ## Status
 

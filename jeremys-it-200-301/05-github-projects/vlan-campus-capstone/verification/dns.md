@@ -1,4 +1,4 @@
-# DNS and Web Verification (Session 5)
+# DNS and Web Verification: v2-standout
 
 Network: `v2-standout.pkt`. DNS server: 192.168.50.10 (VLAN 50). Intranet web server: 192.168.50.11. Simulated public web server: 198.51.100.10 (behind R3).
 

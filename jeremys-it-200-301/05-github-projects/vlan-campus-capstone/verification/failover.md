@@ -1,4 +1,4 @@
-# Failover Verification – Session 4
+# Failover Verification: v1-core
 
 - **Date:** 2026-11-10
 - **File:** `packet-tracer/v1-core.pkt`
@@ -39,7 +39,7 @@ FastEthernet0 Connection:(default port)
                                      0.0.0.0
 ```
 
-**Observation:** PC-BRANCH received `192.168.40.51/24` with gateway `192.168.40.1`. The DHCP server is `192.168.40.1`, which is R2's branch LAN interface. The DNS server shows `0.0.0.0` because no DNS option is configured yet (planned for Session 5). **PASS**
+**Observation:** PC-BRANCH received `192.168.40.51/24` with gateway `192.168.40.1`. The DHCP server is `192.168.40.1`, which is R2's branch LAN interface. The DNS server shows `0.0.0.0` because no DNS option is configured yet (added in v2-standout). **PASS**
 
 ---
 
@@ -314,7 +314,7 @@ to a reachable address.
 
 
 
-# Failover Verification (Session 5)
+# Failover Verification: v2-standout
 
 Two separate tests: one for Layer 2 (STP), one for Layer 3 (floating default route). Restore the network between them.
 

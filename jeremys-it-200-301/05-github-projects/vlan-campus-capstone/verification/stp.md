@@ -1,4 +1,4 @@
-# STP Verification (Session 5)
+# STP Verification: v2-standout
 
 Network: `v2-standout.pkt`. The three HQ switches form a triangle (SW1–SW2, SW1–SW3, SW2–SW3) running per-VLAN spanning tree (PVST+, the 2960 default). VLANs 10, 20, 30 and 50 are carried on every trunk.
 

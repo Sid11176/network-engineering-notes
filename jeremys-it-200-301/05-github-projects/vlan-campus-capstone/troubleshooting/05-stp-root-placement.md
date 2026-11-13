@@ -1,6 +1,6 @@
 # Troubleshooting Case 5: SW3 becomes STP root for VLAN 20
 
-Network: `v2-standout.pkt` (restored clean copy). One change per fault. Session 7.
+Network: `v2-standout.pkt` (restored clean copy). One change per fault.
 
 ## Status
 
