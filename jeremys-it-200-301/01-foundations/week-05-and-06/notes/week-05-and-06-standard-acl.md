@@ -125,7 +125,7 @@ IP ACCESS-GROUP BLOCK_BOB OUT
 
 | Syntax | Description | Lesson Introduced |
 | --- | --- | --- |
-| `IP ACCESS-GROUP {number \| name} {IN | OUT}` | Applies ACL to interface in specified direction | Standard Numbered & Named ACLs |
+| `IP ACCESS-GROUP {number \| name} {IN \| OUT}` | Applies ACL to interface in specified direction | Standard Numbered & Named ACLs |
 
 ### Privileged EXEC Mode — Verification
 
