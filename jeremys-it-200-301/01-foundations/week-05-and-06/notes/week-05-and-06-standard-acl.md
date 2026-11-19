@@ -110,7 +110,7 @@ IP ACCESS-GROUP BLOCK_BOB OUT
 
 | Syntax | Description | Lesson Introduced |
 | --- | --- | --- |
-| `ACCESS-LIST {1-99 | 1300-1999} {PERMIT | DENY} {IP} {WILDCARD}` | Creates a standard numbered ACL entry | Standard Numbered ACLs |
+| `ACCESS-LIST {1-99 \| 1300-1999} {PERMIT \| DENY} {IP} {WILDCARD}` | Creates a standard numbered ACL entry | Standard Numbered ACLs |
 | `ACCESS-LIST {number} REMARK {text}` | Adds a description/remark to a numbered ACL | Standard Numbered ACLs |
 | `IP ACCESS-LIST STANDARD {name}` | Creates/enters standard named ACL config mode | Standard Named ACLs |
 
@@ -118,14 +118,14 @@ IP ACCESS-GROUP BLOCK_BOB OUT
 
 | Syntax | Description | Lesson Introduced |
 | --- | --- | --- |
-| `{sequence-number} {PERMIT | DENY} {IP} {WILDCARD}` | Configures named ACL entry; sequence number optional | Standard Named ACLs |
+| `{sequence-number} {PERMIT \| DENY} {IP} {WILDCARD}` | Configures named ACL entry; sequence number optional | Standard Named ACLs |
 | `REMARK {text}` | Adds a description/remark to a named ACL | Standard Named ACLs |
 
 ### Interface Configuration Mode
 
 | Syntax | Description | Lesson Introduced |
 | --- | --- | --- |
-| `IP ACCESS-GROUP {number | name} {IN | OUT}` | Applies ACL to interface in specified direction | Standard Numbered & Named ACLs |
+| `IP ACCESS-GROUP {number \| name} {IN | OUT}` | Applies ACL to interface in specified direction | Standard Numbered & Named ACLs |
 
 ### Privileged EXEC Mode — Verification
 
@@ -133,8 +133,8 @@ IP ACCESS-GROUP BLOCK_BOB OUT
 | --- | --- | --- |
 | `SHOW ACCESS-LISTS` | Displays all ACLs on the router | Standard Numbered ACLs |
 | `SHOW IP ACCESS-LISTS` | Displays only IP ACLs | Standard Numbered ACLs |
-| `SHOW RUNNING-CONFIG | INCLUDE ACCESS-LIST` | Filters running config for ACL-related lines | Standard Numbered ACLs |
-| `SHOW RUNNING-CONFIG | SECTION ACCESS-LIST` | Displays the full ACL section of running config | Standard Named ACLs |
+| `SHOW RUNNING-CONFIG \| INCLUDE ACCESS-LIST` | Filters running config for ACL-related lines | Standard Numbered ACLs |
+| `SHOW RUNNING-CONFIG \| SECTION ACCESS-LIST` | Displays the full ACL section of running config | Standard Named ACLs |
 
 ### Wildcard Syntax Quick Reference
 
