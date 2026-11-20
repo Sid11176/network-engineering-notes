@@ -105,6 +105,8 @@ EtherChannel load balances based on **flows** (communication between two nodes).
 
 - ✅ On + On only
 
+**Limit: Up to 8 active interfaces per EtherChannel. LACP allows up to 16, but only 8 active; the rest are standby.**
+
 ---
 
 ## ⚠️ Member Interface Requirements
