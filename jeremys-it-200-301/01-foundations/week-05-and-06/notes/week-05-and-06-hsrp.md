@@ -45,10 +45,8 @@
 | **Standard** | Cisco Proprietary | Open Standard | Cisco Proprietary |
 | **Router Roles** | Active, Standby | Master, Backup | AVG, AVF |
 | **Load Balancing** | Per Subnet/VLAN | Per Subnet/VLAN | **Per Host (in a single subnet)** |
-| **Multicast IPv4** | **v1:** `224.0.0.2` 
-**v2:** `224.0.0.102` | `224.0.0.18` | `224.0.0.102` |
-| **Virtual MAC** | **v1:** `0000.0c07.acXX` 
-**v2:** `0000.0c9f.fXXX` | `0000.5e00.01XX` | `0007.b400.XXYY` |
+| **Multicast IPv4** | **v1:** `224.0.0.2` **v2:** `224.0.0.102` | `224.0.0.18` | `224.0.0.102` |
+| **Virtual MAC** | **v1:** `0000.0c07.acXX` **v2:** `0000.0c9f.fXXX` | `0000.5e00.01XX` | `0007.b400.XXYY` |
 | `*XX` = HSRP/VRRP Group Number, `YY` = GLBP AVF Number* |  |  |  |
 
 ---
